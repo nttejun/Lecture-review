@@ -334,44 +334,59 @@ operating system이 갖고 있는 추상화까지 뚫고 들어가야 한다
 
 <h4>Phase3 시기의 특징</h4>
 
-1] 3C Convergence
+1. 3C Convergence
 
-Communication, Computer, Consumter Electronics 경계가 무너졌다
+    - Communication, Computer, Consumter Electronics 경계가 무너졌다
 
-인터넷 사용이 선택이 아닌 필수가 된 시대이다
+    - 인터넷 사용이 선택이 아닌 필수가 된 시대이다
 
-그 이유는 phase2 시기부터 하드웨어가 저렴해지면서 많은 사람들이 서비스를 사용하고 있기 때문에도 OS는 더욱 복잡하게 되었다.
+    - 그 이유는 phase2 시기부터 하드웨어가 저렴해지면서 많은 사람들이 서비스를 사용하고 있기 때문에도 OS는 더욱 복잡하게 되었다.
+
+<br>
 
 <h4>Multimedia support</h4>
 
+미디어가 여러개 있다는 것이 Multimedia
+
 유니(텍스트)미디어에서 멀티미디어로 처리하는 대상이 변화하면서
 
-멀티미디어의 특징으로는 Continuous Media
+멀티미디어의 중요한 특징은 Continuous Media
 
+* Continuous media : 시간적 제약에 맞춰 연속적으로 처리해야 하는 데이터 (Ex : 동영상)
+
+<br>
 
 <h4>Continuous Media</h4>
 
 특정 시간에 맞춰 연속적으로 처리해야하는 데이터
 
+<br>
 
 <h4>Downloading과 Streaming</h4>
 
 1] Downloading
 
-전체 데이터를 확보한 다음에 작업을 진행한다
+내가 원하는 전체 데이터를 확보한 다음에 작업을 진행하는 것입니다
 
 2] Streaming
 
-일부 데이터만 확호한 상태에서도 작업을 진행한다
+일부 데이터만 확호한 상태에서도 작업을 진행하는 것입니다
+
+<br>
 
 <h4>BandWidth 스케줄링 등장</h4>
 
-중요한 일을 먼저 처리하는 우선순위 기반 스케줄링에서 Continous Media를 원활한 처리를 하기위해
+- 스케줄링 방식의 변화
 
-BandWidth 스케줄링으로의 변화가 일어난다
+    - 중요한 일을 먼저 처리하는 우선순위 기반 스케줄링에서 Continous Media를 원활한 처리를 하기위해
 
-그 이유는 멀티미디어는 스케줄링이 잘못되면 사용자가 금방 저품질을 알게되어 "일정한 BandWidth"를 제공하는 스케줄링이 필요하다
+    - BandWidth 스케줄링으로의 변화가 일어난다
+
+    - 그 이유는 멀티미디어는 스케줄링이 잘못되면 사용자가 금방 저품질을 알게되어 "일정한 BandWidth"를 제공하는 스케줄링이 필요하다
+
+<br>
 
 <h4>Phase3 시기의 특징</h4>
 
-Operating system이 전문적인 분야에서 보편적 자원으로의 변화를 했다
+2. Operating system(OS)이 전문적인 분야에서 보편적 자원으로의 변화를 했다
+
