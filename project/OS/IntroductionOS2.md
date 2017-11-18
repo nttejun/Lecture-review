@@ -2,6 +2,8 @@
 
 <h4>Operating System은 어떤 기능을 해야하는가?</h4>
 
+<br>
+
 <h4>OS의 성격</h4>
 
 굉장히 크며 복잡한 시스템이다 ( 컴퓨터 시스템을 관리하기 때문에 )
@@ -12,9 +14,11 @@
 
 - Coordinator
    - 여러 태스크가 자원을 차지하기 위해 충돌이 일어날 때 이를 중재하는 역할
+
 - 추상화
     - 여러 유저가 사용하기 쉽도록 추상화를 통해 손쉬운 런타임 환경을 제공해주는 것
     - operating system이 복잡해 지면서 복잡성을 감소시키기 위한 방법으로 사용
+    
 - standard library
     - 시스템을 관리하는데 필요한 코드(모듈)를 제공하여 프로그래밍을 쉽게 할 수 있도록 제공하는 기본기능
 
@@ -32,8 +36,10 @@ CPU 관리 시스템, IO device 관리 시스템, Memory 관리 시스템 3가�
 
 - Character I/O device
     - I/O의 단위가 작은 데이터인 byte 단위 ( 키보드, 마우스 )
+
 - Block I/O device
     - I/O의 단위가 Block인 단위 ( 하드디스크 )
+
 - Network I/O device
     - Network를 제어하는 장치 ( 소켓 )
 
