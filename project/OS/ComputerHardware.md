@@ -2,7 +2,7 @@
 
 학습목표 : Operating Stystem 공부에 필요한 기본적인 하드웨어 시스템을 학습
 
-###컴퓨터 시스템 아키텍처(Computer System Architecture)###
+###Computer System Architecture(컴퓨터 시스템 아키텍처)###
 1.	CPU
 2. 메모리
 3. IO device
@@ -61,3 +61,31 @@ DMA Controller는 블럭에 있는 데이터를 읽은 후 전송한다
 2. Block transfer (CPU와 DMA Controller가 대등하게 경쟁하여 Bus 사용하는 방식)
 
 ---
+
+###Interrupt Mechanism###
+Interrupt는 개념을 이해하고 실제 Software, Hardware Interrupt가 어떻게 구현이 되었는지 확인한다
+
+Interrupt Mechanism은 비동기 구조
+OS가 존재하기 위해 컴퓨터 하드웨어가 제공하는 가장 중요한 Mechanism (Interrupt driven system)
+
+####Interrupt 종류 2가지####
+1. Hardware Interrupt
+2. Software Interrupt
+
+####Hardware Interrupt####
+CPU 외부에서 CPU가 처리되는 하는 일이 발생되면 신호를 통해 알려주어 문제를 처리할 수 있도록 한다
+
+####Software Interrupt####
+현재 실행 프로그램에 문제(예외상항)가 발생되면 문제 해결을 진행하기 위해 별도로 지시하여 문제를 처리할 수 있도록 한다
+
+####Interrupt Source 역할####
+I/O Controller, DMA Controller 등
+
+####Interrupt 처리과정####
+1. Interrupt Signal를 받으면 프로그램이 중단된다
+단, 현재 실행되고 있는 Instruction은 완료하고 그 다음 프로그램 실행을 중단시킨다
+2. Interrupt 문제를 해결한 후 다시 실행하기 위해 중단된 지점의 주소는 안전하게 저장한다
+3. Interrupt Request Number(IRQ 번호)를 통해 Interrupt Source 확인한다
+4. Interrupt Vector Table 검색으로 Interrupt Service Routine(ISR) 주소를 확인한다
+5. 확인된 주소는 처리해야 할 Handler address가 저장되어 있어 적절한 Handler가 실행된다
+
