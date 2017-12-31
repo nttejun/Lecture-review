@@ -1,4 +1,6 @@
-동영상 강의 : 서울대학교 평생교육원 [운영체제의 기초](http://snui.snu.ac.kr/ocw/index.php?mode=view&id=627) Introduction to OS 2(2-1, 2-2) - 홍성수
+## Introduction OS 2 ##
+
+출처 : [서울대학교 평생교육원 - 운영체제의 기초, 홍성수](http://snui.snu.ac.kr/ocw/index.php?mode=view&id=684)
 
 <h4>Operating System은 어떤 기능을 해야하는가?</h4>
 
