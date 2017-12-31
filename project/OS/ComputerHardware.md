@@ -8,33 +8,41 @@
 2. 메모리
 3. IO device
 
+
 #### System bus (시스템 버스) ####
 하드웨어(컴퓨터 시스템)를 서로 연결해주는 역할
 
+
 #### System bus (시스템 버스) 기능 ####
 메모리 간 데이터 전송 (transaction)
+
 
 #### System bus Operation ####
 1.  read transaction
 2.  write transaction
 
+
 #### System bus 종류 ####
 Data bus : 실제 데이터
 Address bus : 전송 목적지
+
 
 #### Bus master ####
 bus transaction을 작동시키는 요소
 > Bus arbiter : 복수 개의 Bus master 존재하고 있어 특정 System bus 지정이 필요합니다
 > 정리하면, System bus를 관리하는 역할을 갖고 있습니다
 
+
 #### Bus slave ####
 데이터를 담는 장치
 데이터의 주소(address)를 갖고 있다
+
 
 ### Bus Master 하드웨어 종류 ###
 1. CPU
 2. I/O Device Controller
 3. DMA Controller 등
+
 
 ### I/O Operation ###
 #### Interrupt-Driven I/O ####
