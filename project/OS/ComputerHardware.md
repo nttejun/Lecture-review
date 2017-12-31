@@ -89,3 +89,41 @@ I/O Controller, DMA Controller 등
 4. Interrupt Vector Table 검색으로 Interrupt Service Routine(ISR) 주소를 확인한다
 5. 확인된 주소는 처리해야 할 Handler address가 저장되어 있어 적절한 Handler가 실행된다
 
+---
+
+###Hardware Protection Mechanisms###
+
+####Privileged Instruction####
+Operation System만 수행할 수 있는 Instruction
+
+####Dual Mode Operation####
+Mode 결정은 Micro Process 프로세스 안에 존재하는 Register가 결정한다
+수행 모드는 2가지가 존재한다
+1. Kernel Mode
+2. User Mode
+
+Dual Mode 존재하는 목적은 일반적으로 모든 사용자의 처리를 신뢰할 수는 없어
+모든 처리를 허용하는 Kernal Mode, 제한적인 처리만 허용하는 User Mode 2가지로 구분한다
+> 컴퓨터의 특성상 사용하지 않는 자원에 접근하려는 성격을 고려하면, I/O Device의 경우 권한이 없는 유저가 자원을 독점한다면 프로그램에 문제가 될 수 있어 권한을 구분하여 문제를 방지할 수도 있다
+
+####Kernel Mode####
+Privileged Instruction를 수행시킬 수 있는 모드
+
+####User Mode####
+Privileged Instruction만 수행시킬 수 없는 모드
+
+####Operating System이 Kernel Mode에서 수행 시 받는 권한####
+Privileged Instruction 수행시킬 수 있는 권한
+모든 메모리 영역 접근할 수 있는 권한
+(일반적으로는 자신에게 주어진 메모리 영역에만 접근할 수 있다)
+
+
+> 메모 : Privileged Instruction 필요하면 Interrupt instruction을 수행시킨다
+Interrupt Instruction은 모드를 커널모드로 변경시키는 기능을 갖고 있다
+Hardware Interrupt가 발생하면 항상 Mode bit를 0에서 1로 변경시켜 커널모드로 변경시켜준다
+Software Interrupt가 발생하면 Interrupt handler가 등장하고 이것이 유저의 권한을 변경해주게 된다
+
+> Interrupt가 발생하면 Mode가 무조건 커널로 변경되고
+모드 커널을 Interrupt Service Routine이 시스템을 장악한다
+이 구조로 Computer Hardware Protection이 모두 진행되며
+Operating System은 이 구조를 기반으로 동작합니다
