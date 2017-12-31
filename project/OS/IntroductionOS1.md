@@ -1,4 +1,6 @@
-동영상 강의 : 서울대학교 평생교육원 [운영체제의 기초](http://snui.snu.ac.kr/ocw/index.php?mode=view&id=623) Introduction to OS 1(1,2,3) - 홍성수
+## Introduction OS 1 ##
+
+출처 : [서울대학교 평생교육원 - 운영체제의 기초, 홍성수](http://snui.snu.ac.kr/ocw/index.php?mode=view&id=684)
 
 <h4>operating sysyem의 생활화</h4>
 
