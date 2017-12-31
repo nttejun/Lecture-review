@@ -12,7 +12,7 @@
 
 <br>
 
-## System bus (시스템 버스) ##
+### System bus (시스템 버스) ###
 하드웨어(컴퓨터 시스템)를 서로 연결해주는 역할
 
 <br>
@@ -93,6 +93,8 @@ DMA Controller는 블럭에 있는 데이터를 읽은 후 전송한다
 
 ---
 
+<br>
+
 ## Interrupt Mechanism ##
 Interrupt는 개념을 이해하고 실제 Software, Hardware Interrupt가 어떻게 구현이 되었는지 확인한다
 
@@ -133,6 +135,8 @@ I/O Controller, DMA Controller 등
 <br>
 
 ---
+
+<br>
 
 ## Hardware Protection Mechanisms ##
 
