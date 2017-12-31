@@ -3,11 +3,14 @@
 
 학습목표 : Operating Stystem 공부에 필요한 기본적인 하드웨어 시스템을 학습
 
+<br>
+
 ## Computer System Architecture(컴퓨터 시스템 아키텍처) ##
 1. CPU
 2. 메모리
 3. IO device
 
+<br>
 
 ## System bus (시스템 버스) ##
 하드웨어(컴퓨터 시스템)를 서로 연결해주는 역할
