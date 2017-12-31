@@ -2,7 +2,7 @@
 
 출처 : [서울대학교 평생교육원 - 운영체제의 기초, 홍성수](http://snui.snu.ac.kr/ocw/index.php?mode=view&id=684)
 
-학습 목표 :  프로세스 스케줄링이 진행되는 과정을 이해
+학습 목표 :  Scheduling, Context Switching 개념을 이해하고 처리하는 과정에서 어떻게 Context switching, Scheduling 수행이 가능한지 내부 동작원리를 학습
 
 <br>
 
@@ -123,3 +123,87 @@ Run Time Context가 변해도 유저의 아이디는 동일하다
 공통점 : 하나의 Routine에서 다른 Routine으로 이동한다
 다른점 : 일반 콜은 모드변경이 없다, 시스템 콜은 모드변경을 한다
 
+<br>
+
+---
+
+<br>
+
+### Context Switching ###
+현재 수행중인 프로세스의 State를 안전한 장소로 이동(저장)시키며, 다음에 수행될 프로세스 State를 불러와야 한다
+
+<br>
+
+### State 2가지로 의미가 구분 ###
+1. 프로세스가 기억하는 모든 정보
+2. 프로세스의 상황을 표현 (State transition)
+
+<br>
+
+### Context 3가지 ###
+1. 메모리에 쌓여있는 State ( Memory Context)
+2. CPU, I/O Register ( Hardware Context)
+3. OS 내부적으로 커널에 담고있는 정보 ( System, Kernel Context)
+
+<br>
+
+### Context Switching 대상 ###
+Hardware Context, Memory Context는 필요한 경우 부분적으로 이동, Kernel Context는 유지
+> CPU Register는 메인 메모리로 이동하게 된다
+
+<br>
+
+### Register 이동 ###
+
+1. User Process Add Instruction 수행 중에 Interrupt 발생
+2. 실제로는 Add Instruction 수행은 완료되고 Add가 끝나면 다음 Interrupt를 확인한다
+3. Interrupt가 확인되면 Interrupt 발생 위치를 Stack Push로 저장된다
+4. Interrupt 발생으로 Mode는 0으로 변경되며 Mode Change가 발생한다
+5. 이때 Stack에 Mode 상태 Process State Word(PSW) 값도 Push 하여 보관한다
+6. 데이터보존과 Mode Change가 완료되면 IRQ를 확인해서 해당 핸들러를 실행한다
+7. Interrupt 수행이 끝나면 새로운 프로세스가 수행되며, Add 바로 다음 위치인 Interrupt 발생 주소를 스택에서 찾아 Stack Pop을 통해 새로운 프로세스에서 Interrupt 발생지점부터 다시 프로그램을 이어서 수행하게 된다
+> 복귀를 위해 Stack에 Return 주소를 저장하며, Return  From Instruction 수행 시 Stack에서 PSW 값을 찾아 Mode를 변경해주고, 복귀할 주소를 찾아 Pop 시키게 된다
+
+이 과정에서 만약 상황에 따라 일부의 레지스터는 대피하지 않아도 되는 상황인 경우 **Software**적으로 구현
+
+<br>
+
+### Stack push ###
+안전한 장소로 주소를 이동시키는 것을 의미
+
+<br>
+
+### Stack pop ###
+저장한 데이터를 다시 복구하는 것을 의미
+
+<br>
+
+### Stack에 값을 저장하는 역할은 누가? ###
+Interrupt가 발생되면 PSW(Process State Word)값과 PC 값(Interrupt 발생 주소)이 **Hardware**적으로 스택에 저장하는 최소한의 기능을 지원한다
+> 그 다음 OS Dispatcher가 수행되며 Interrupt Service Routine 호출되어 수행한다 
+
+<br>
+
+### Return Address ###
+Return Address 값은 PC (program count) 에서 얻어온다
+> Interrupt 발생 시 Micro Process는 PSW Register를 Stack에 저장하고 PC Register 저장
+
+<br>
+
+### OS Global Variable ###
+전역변수
+
+<br>
+
+### PCB(Process Control Block) ###
+프로세스 아이디, 스케줄링 정보, 컨텍스트 스위칭에 필요한 부분 정보(Stack Point Field)를 갖고 있다
+> Stack Point Field : 스택에 Top 주소를 포인팅 하도록 하고 있다
+
+<br>
+
+### Stack은 어디에 위치하고 있는가 ###
+메인메모리 아무 곳에서 존재하고 있다
+각 프로세스 별도의 스택을 갖고 있다
+> 단, Active 스택은 1개
+
+<br>
