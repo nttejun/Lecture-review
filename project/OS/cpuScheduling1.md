@@ -1,4 +1,4 @@
-# Scheduling #
+# CPU Scheduling1 #
 
 출처 : [서울대학교 평생교육원 - 운영체제의 기초, 홍성수](http://snui.snu.ac.kr/ocw/index.php?mode=view&id=684)
 
